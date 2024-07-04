@@ -20,6 +20,7 @@ export class ListenersComponent {
 
   onDocumentKeydown(event: KeyboardEvent) {
     console.log('Documento presionado!');
+    this.changeBackgroundColor();
   }
 
 

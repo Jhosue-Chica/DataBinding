@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+<h3>{{numero}}</h3>
+
+<img [src]="imagenUrl" alt="usuario" width="100px"> 
+
+<br> <br>
+<!-- * * * * * * * * * * * HTML -> TS * * * * * * * * * * * * -->
+
+<button type="button" (click)="onClick()">Haz Click</button>
+<br> <br>
+
+<form action="">
+  <label >Ingreso Nombre: </label>
+  <input type="text" [(ngModel)]="twoWayDataBindig" name="nombre">
+  <br> <br>
+  <label >Despliegue de Nombre: </label>
+  <input type="text" [(ngModel)]="twoWayDataBindig" name="nombre">
+  <br>
+</form>

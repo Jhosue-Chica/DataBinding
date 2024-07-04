@@ -1,25 +1,11 @@
+<!--
 <app-prueba></app-prueba>
 
-<!-- * * * * * * * * * * * TS -> HTML * * * * * * * * * * * * -->
+<app-binding></app-binding>
+-->
+<app-events></app-events>
 
-<h1>{{title}}</h1>
-<h3>{{numero}}</h3>
 
-<img [src]="imagenUrl" alt="usuario" width="100px"> 
+<app-listeners></app-listeners>
 
-<br> <br>
-<!-- * * * * * * * * * * * HTML -> TS * * * * * * * * * * * * -->
 
-<button type="button" (click)="onClick()">Haz Click</button>
-<br> <br>
-
-<form action="">
-  <label for="">Ingreso Nombre: </label>
-  <input type="text" [(ngModel)]="twoWayDataBindig" name="nombre">
-  <br> <br>
-  <label for="">Despliegue de Nombre: </label>
-  <input type="text" [(ngModel)]="twoWayDataBindig" name="nombre">
-  <br>
-</form>
-
-<app-formulario></app-formulario>

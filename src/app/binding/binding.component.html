@@ -1,7 +1,7 @@
 <h1>{{title}}</h1>
 <h3>{{numero}}</h3>
 
-<img [src]="imagenUrl" alt="usuario" width="100px"> 
+<img [src]="imagenUrl" alt="usuario" width="100px">
 
 <br> <br>
 <!-- * * * * * * * * * * * HTML -> TS * * * * * * * * * * * * -->
@@ -9,11 +9,47 @@
 <button type="button" (click)="onClick()">Haz Click</button>
 <br> <br>
 
+<!-- * * * * * * * * * * * Ejemplo 1: Input de Texto * * * * * * * * * * * * -->
 <form action="">
-  <label >Ingreso Nombre: </label>
+  <label>Ingreso Nombre: </label>
   <input type="text" [(ngModel)]="twoWayDataBindig" name="nombre">
   <br> <br>
-  <label >Despliegue de Nombre: </label>
+  <label>Despliegue de Nombre: </label>
   <input type="text" [(ngModel)]="twoWayDataBindig" name="nombre">
   <br>
 </form>
+
+<br><br>
+<!-- * * * * * * * * * * * Ejemplo 2: Selector (Dropdown) * * * * * * * * * * * * -->
+ <div>
+  <label for="fruit">Selecciona una fruta:</label>
+  <select id="fruit" [(ngModel)]="selectedFruit">
+    <option *ngFor="let fruit of fruits" [value]="fruit">{{fruit}}</option>
+  </select>
+  <p>Fruta seleccionada: {{selectedFruit}}</p>
+ </div>
+
+<br><br>
+<!-- * * * * * * * * * * * Ejemplo 3: Checkbox * * * * * * * * * * * * -->
+<div>
+  <label for="subscribe">Suscribirse al boletín:</label>
+  <input id="subscribe" type="checkbox" [(ngModel)]="isSubscribed">
+  <p>Suscrito: {{isSubscribed}}</p>
+</div>
+
+<br><br>
+<!-- * * * * * * * * * * * Ejemplo 4: Textarea * * * * * * * * * * * * -->
+<div>
+  <label for="message">Mensaje:</label>
+  <textarea id="message" [(ngModel)]="message"></textarea>
+  <p>Tu mensaje es: {{message}}</p>
+</div>
+
+<br><br>
+<!-- * * * * * * * * * * * Ejemplo 5: Radio Buttons * * * * * * * * * * * * -->
+<div>
+  <label>Género:</label>
+  <input type="radio" name="gender" [(ngModel)]="gender" value="Masculino"> Masculino
+  <input type="radio" name="gender" [(ngModel)]="gender" value="Femenino"> Femenino
+  <p>Género seleccionado: {{gender}}</p>
+</div>

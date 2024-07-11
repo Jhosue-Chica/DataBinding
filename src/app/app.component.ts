@@ -7,11 +7,12 @@ import { BindingComponent } from './binding/binding.component';
 import { EventsComponent } from './events/events.component';
 import { ListenersComponent } from './listeners/listeners.component';
 import { TarjetasComponent } from './tarjetas/tarjetas.component';
+import { ResividorComponent } from './resividor/resividor.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PruebaComponent, FormsModule, FormularioComponent, BindingComponent, EventsComponent, ListenersComponent, TarjetasComponent],
+  imports: [RouterOutlet, PruebaComponent, FormsModule, FormularioComponent, BindingComponent, EventsComponent, ListenersComponent, TarjetasComponent, ResividorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

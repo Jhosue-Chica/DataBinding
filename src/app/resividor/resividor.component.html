@@ -1,0 +1,12 @@
+<div class="container mt-5">
+    <h2>Resividor de Datos</h2>
+    <app-formulario (formSubmit)="recibirDatos($event)"></app-formulario>
+  
+    <div *ngIf="datosRecibidos" class="mt-5">
+      <h3>Datos Recibidos:</h3>
+      <p><strong>Nombre:</strong> {{ datosRecibidos.nombre }}</p>
+      <p><strong>Email:</strong> {{ datosRecibidos.email }}</p>
+      <p><strong>Mensaje:</strong> {{ datosRecibidos.mensaje }}</p>
+    </div>
+  </div>
+  

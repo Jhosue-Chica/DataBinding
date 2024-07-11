@@ -10,6 +10,8 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
     <br><br>
     <button (click)="notifyParentImg()">Notificar al padre con imagen</button>
     <br><br>
+    <button (click)="sendCard()">Enviar Tarjeta al Padre</button>
+    <br><br>
     <div class="container">
       <div class="card-container">
         <div class="card">
@@ -46,6 +48,7 @@ export class HijoComponent {
   @Input() htmlPadre: string = '';
   @Output() notificacion: EventEmitter<string> = new EventEmitter<string>();
   @Output() notificacionImg: EventEmitter<string> = new EventEmitter<string>();
+  @Output() cardEmit: EventEmitter<string> = new EventEmitter<string>();
 
   notifyParent() {
     this.notificacion.emit('Hola, soy tu hijo');
@@ -54,5 +57,18 @@ export class HijoComponent {
   notifyParentImg() {
     const imgurl = '../../user.png';
     this.notificacionImg.emit(imgurl);
+  }
+
+  sendCard() {
+    const cardHtml = `
+    <div class="container">
+      <div class="card-container">
+        <div class="card">
+          <h3>Título de la Tarjeta 9</h3>
+          <p>Descripción de la tarjeta 9.</p>
+        </div>
+      </div>
+    </div>`;
+    this.cardEmit.emit(cardHtml);
   }
 }

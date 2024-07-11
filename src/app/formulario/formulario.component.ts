@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -10,14 +10,22 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent {
+
+  @Output() formSubmit: EventEmitter<{ nombre: string, email: string, mensaje: string }> = new EventEmitter();
+  //  @Input() datos: { nombre: string, email: string, mensaje: string } = { nombre: '', email: '', mensaje: '' };
+  
   nombre: string = '';
   email: string = '';
   mensaje: string = '';
 
   // Método para manejar el envío del formulario
   onSubmit() {
-    console.log('Nombre:', this.nombre);
-    console.log('Email:', this.email);
-    console.log('Mensaje:', this.mensaje);
+    // Emitir los datos del formulario cuando se envía
+    this.formSubmit.emit({
+      nombre: this.nombre,
+      email: this.email,
+      mensaje: this.mensaje
+    });
+    console.log('Formulario enviado');
   }
 }

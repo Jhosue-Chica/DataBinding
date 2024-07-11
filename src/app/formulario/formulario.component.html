@@ -1,22 +1,18 @@
-<p>formulario works!</p>
-
 <div class="container mt-5">
-    <h2>Formulario de Contacto</h2>
-    <form (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" class="form-control" [(ngModel)]="nombre" name="nombre">
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" class="form-control" [(ngModel)]="email" name="email">
-      </div>
-      <div class="form-group">
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" class="form-control" [(ngModel)]="mensaje" name="mensaje"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
-  </div>
-  
-  
+  <h2>Formulario de Contacto</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" class="form-control" [(ngModel)]="nombre" name="nombre">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" class="form-control" [(ngModel)]="email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" class="form-control" [(ngModel)]="mensaje" name="mensaje"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+</div>

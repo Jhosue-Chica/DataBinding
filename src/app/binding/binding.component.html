@@ -3,17 +3,16 @@
 
 <img [src]="imagenUrl" alt="usuario" width="100px">
 
-<br> <br>
+<br><br>
 <!-- * * * * * * * * * * * HTML -> TS * * * * * * * * * * * * -->
-
 <button type="button" (click)="onClick()">Haz Click</button>
-<br> <br>
+<br><br>
 
 <!-- * * * * * * * * * * * Ejemplo 1: Input de Texto * * * * * * * * * * * * -->
 <form action="">
   <label>Ingreso Nombre: </label>
   <input type="text" [(ngModel)]="twoWayDataBindig" name="nombre">
-  <br> <br>
+  <br><br>
   <label>Despliegue de Nombre: </label>
   <input type="text" [(ngModel)]="twoWayDataBindig" name="nombre">
   <br>
@@ -21,13 +20,13 @@
 
 <br><br>
 <!-- * * * * * * * * * * * Ejemplo 2: Selector (Dropdown) * * * * * * * * * * * * -->
- <div>
+<div>
   <label for="fruit">Selecciona una fruta:</label>
   <select id="fruit" [(ngModel)]="selectedFruit">
     <option *ngFor="let fruit of fruits" [value]="fruit">{{fruit}}</option>
   </select>
   <p>Fruta seleccionada: {{selectedFruit}}</p>
- </div>
+</div>
 
 <br><br>
 <!-- * * * * * * * * * * * Ejemplo 3: Checkbox * * * * * * * * * * * * -->
@@ -52,4 +51,26 @@
   <input type="radio" name="gender" [(ngModel)]="gender" value="Masculino"> Masculino
   <input type="radio" name="gender" [(ngModel)]="gender" value="Femenino"> Femenino
   <p>Género seleccionado: {{gender}}</p>
+</div>
+
+<br><br>
+<!-- * * * * * * * * * * * Ejemplo 6: Binding de Clase CSS * * * * * * * * * * * * -->
+<div [class.highlight]="isHighlighted">
+  Este div se resalta cuando isHighlighted es verdadero.
+</div>
+<button (click)="toggleHighlight()">Toggle Highlight</button>
+
+<br><br>
+<!-- * * * * * * * * * * * Ejemplo 7: Binding de Estilo en Línea * * * * * * * * * * * * -->
+<div [style.background-color]="backgroundColor">
+  Este div cambia de color de fondo.
+</div>
+<button (click)="changeColor()">Change Color</button>
+
+<br><br>
+<!-- * * * * * * * * * * * Ejemplo 8: Binding de Atributos * * * * * * * * * * * * -->
+<div>
+  <label for="range">Selecciona un rango:</label>
+  <input id="range" type="range" [attr.min]="minRange" [attr.max]="maxRange" [(ngModel)]="rangeValue">
+  <p>Valor seleccionado: {{rangeValue}}</p>
 </div>

@@ -30,8 +30,27 @@ export class BindingComponent {
   // Ejemplo 5: Radio Buttons
   gender: string = '';
 
+  // Ejemplo 6: Binding de Clase CSS
+  isHighlighted: boolean = false;
+
+  // Ejemplo 7: Binding de Estilo en Línea
+  backgroundColor: string = 'lightblue';
+
+  // Ejemplo 8: Binding de Atributos
+  minRange: number = 0;
+  maxRange: number = 100;
+  rangeValue: number = 50;
+
   onClick(){
     console.log('Click en el boton');
     alert('Click en el boton');
+  }
+
+  toggleHighlight() {
+    this.isHighlighted = !this.isHighlighted;
+  }
+
+  changeColor() {
+    this.backgroundColor = this.backgroundColor === 'lightblue' ? 'lightgreen' : 'lightblue';
   }
 }

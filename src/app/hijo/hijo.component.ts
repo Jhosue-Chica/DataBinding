@@ -1,9 +1,11 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hijo',
   standalone: true,
   template: `
+    <p>{{ mensajePadre }}</p>
+    <div [innerHTML]="htmlPadre"></div>
     <button (click)="notifyParent()">Notificar al padre</button>
     <br><br>
     <button (click)="notifyParentImg()">Notificar al padre con imagen</button>
@@ -40,6 +42,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./hijo.component.css']
 })
 export class HijoComponent {
+  @Input() mensajePadre: string = '';
+  @Input() htmlPadre: string = '';
   @Output() notificacion: EventEmitter<string> = new EventEmitter<string>();
   @Output() notificacionImg: EventEmitter<string> = new EventEmitter<string>();
 
